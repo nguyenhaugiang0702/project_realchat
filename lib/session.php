@@ -6,7 +6,7 @@ class session
     public static function checkSession()
     {
         session_start();
-        if (!isset($_SESSION['unique_id'])) {
+        if (!isset($_SESSION['user_id'])) {
             self::destroy();
             echo "<script>window.location='index.php';</script>";
         }
@@ -15,7 +15,7 @@ class session
     public static function checkLogin()
     {
         session_start();
-        if (isset($_SESSION['unique_id'])) {
+        if (isset($_SESSION['user_id'])) {
             echo "<script>window.location='frameChat.php';</script>";
         }
     }

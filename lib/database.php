@@ -96,13 +96,13 @@
         if ($stmt->rowCount() > 0) {
           foreach ($result as $row) {
             if (password_verify($pass, $row['pass'])) {
-              $_SESSION['unique_id']  = $row['unique_id'];
+              $_SESSION['user_id']  = $row['id'];
               $_SESSION['email']      = $row['email'];
               $_SESSION['username']   = $row['username'];
 
               //login active status
-              $id =  $_SESSION['unique_id'];
-              $update = $this->pdo->prepare("UPDATE user SET status='Active' WHERE unique_id='$id'");
+              $user_id =  $_SESSION['user_id'];
+              $update = $this->pdo->prepare("UPDATE user SET status='Active' WHERE id='$user_id'");
               $update->execute();
 
               echo "<script>window.location='frameChat.php';</script>";

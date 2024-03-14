@@ -1,18 +1,18 @@
-<?php 
- include_once '../config/config.php';
- include_once '../lib/database.php';
- $db = new Database;
+<?php
+include_once '../config/config.php';
+include_once '../lib/database.php';
+$db = new Database;
 
- $dt     = new DateTime('now', new DateTimezone('Asia/Dhaka'));
- $date   = $dt->format('F j, Y');
- $tm     = new DateTime('now', new DateTimezone('Asia/Dhaka'));
- $time   = $tm->format('g:i a');
+$dt     = new DateTime('now', new DateTimezone('Asia/Dhaka'));
+$date   = $dt->format('F j, Y');
+$tm     = new DateTime('now', new DateTimezone('Asia/Dhaka'));
+$time   = $tm->format('g:i a');
 
- $msg      = str_replace("'", "", $_POST['message']);
- $receiver = $_POST['receive']; //incoming msg id
- $sender   = $_POST['send']; //outgoing msg id
+$msg      = str_replace("'", "", $_POST['message']);
+$receiver = $_POST['receive']; //incoming msg id
+$sender   = $_POST['send']; //outgoing msg id
 
- $sql = "INSERT INTO 
+$sql = "INSERT INTO 
     tbl_message(
      incoming_msg_id, 
      outgoing_msg_id, 
@@ -26,10 +26,9 @@
     '$date ',
     '$time'
     )";
-   $res = $db->insert($sql);
-   if($res){
+$res = $db->insert($sql);
+if ($res) {
    //echo "Message Sent!";
-  }else{
-  echo "Message sending failed!";
- }
-?>
+} else {
+   echo "Message sending failed!";
+}

@@ -4,8 +4,8 @@ include_once 'lib/database.php';
 $db = new Database;
 ?>
 <?php
-if (isset($_SESSION['unique_id'])) {
-  $id = $_SESSION['unique_id'];
+if (isset($_SESSION['user_id'])) {
+  $user_id = $_SESSION['user_id'];
 }
 ?>
 <!DOCTYPE html>
@@ -30,7 +30,7 @@ if (isset($_SESSION['unique_id'])) {
   <?php
   if (isset($_GET['action']) && $_GET['action'] == "logout") {
     session_destroy();
-    $sql = "UPDATE user SET status='Offline' WHERE unique_id='$id'";
+    $sql = "UPDATE user SET status='Offline' WHERE id='$user_id'";
     $db->update($sql);
     echo "<script>window.location='index.php';</script>";
   }

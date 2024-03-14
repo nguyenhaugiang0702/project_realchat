@@ -3,7 +3,7 @@
         <div class="card-header">
             <div class="message-to d-flex">
                 <?php
-                $sql = "SELECT *FROM user WHERE unique_id='$id'";
+                $sql = "SELECT * FROM user WHERE id='$user_id'";
                 $res = $db->select($sql);
                 if ($res) {
                     foreach ($res as $user) { ?>
@@ -39,12 +39,12 @@
             <div class="user-list-box">
                 <ul>
                     <?php
-                    $query  = "SELECT * FROM user WHERE unique_id != '$id'";
+                    $query  = "SELECT * FROM user WHERE id != '$user_id'";
                     $result = $db->select($query);
                     if ($result) {
                         foreach ($result as $list) { ?>
                             <li>
-                                <a href="chat.php?sender=<?php echo $id; ?>&receiver=<?php echo $list['unique_id']; ?>" class="d-flex align-items-center">
+                                <a href="chat.php?sender=<?php echo $user_id; ?>&receiver=<?php echo $list['id']; ?>" class="d-flex align-items-center">
                                     <img src="<?php echo $list['img']; ?>">
                                     <?php
                                     if ($list['status'] == "Active") {

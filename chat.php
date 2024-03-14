@@ -29,7 +29,7 @@ if (!isset($_GET['sender']) && $_GET['receiver'] == null) {
             <div class="card-header">
               <div class="message-to d-flex ">
                 <?php
-                $query  = "SELECT * FROM user WHERE unique_id='$receiver'";
+                $query  = "SELECT * FROM user WHERE id='$receiver'";
                 $result = $db->select($query);
                 if ($result) {
                   foreach ($result as $active_user) { ?>
