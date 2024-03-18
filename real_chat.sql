@@ -69,7 +69,7 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `unique_id`, `img`, `username`, `email`, `pass`, `status`) VALUES
+INSERT INTO `user` (`id`, `img`, `username`, `email`, `pass`, `status`) VALUES
 (1, '993628918', 'uploads/5a788ef99d.png', 'Robart', 'robart@gmail.com', '$2y$10$Un4e4OysRaXiUa9d/8x1LuuyuysChCrPnc6KVOMkGXKgj3KVVzG7O', 'Active'),
 (2, '1476479542', 'uploads/b2c20e2d9b.png', 'William', 'william@gmail.com', '$2y$10$5XM33B/CMUXrTV.niEjjnudzz/auaGkrp20IEZ2Qd4KiapG9J4re.', 'Active');
 
