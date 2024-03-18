@@ -58,7 +58,6 @@ INSERT INTO `tbl_message` (`msg_id`, `incoming_msg_id`, `outgoing_msg_id`, `text
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
-  `unique_id` text NOT NULL,
   `img` text NOT NULL,
   `username` text NOT NULL,
   `email` text NOT NULL,
