@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Nov 01, 2021 at 06:41 PM
--- Server version: 5.7.24
--- PHP Version: 7.4.24
+-- Host: 127.0.0.1
+-- Generation Time: Mar 18, 2024 at 01:55 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,21 +34,7 @@ CREATE TABLE `tbl_message` (
   `text_message` text NOT NULL,
   `curr_date` text NOT NULL,
   `curr_time` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_message`
---
-
-INSERT INTO `tbl_message` (`msg_id`, `incoming_msg_id`, `outgoing_msg_id`, `text_message`, `curr_date`, `curr_time`) VALUES
-(1, '1476479542', '993628918', 'Hi', 'November 2, 2021 ', '12:30 am'),
-(2, '993628918', '1476479542', 'Hello bro how are you? ðŸ˜Š\n', 'November 2, 2021 ', '12:31 am'),
-(3, '1476479542', '993628918', 'Ya bro im fine', 'November 2, 2021 ', '12:34 am'),
-(4, '993628918', '1476479542', 'What are you doing now?\n', 'November 2, 2021 ', '12:38 am'),
-(5, '1476479542', '993628918', 'Sitting on a chair', 'November 2, 2021 ', '12:38 am'),
-(6, '993628918', '1476479542', 'oh', 'November 2, 2021 ', '12:38 am'),
-(7, '993628918', '1476479542', 'You can come at my house now', 'November 2, 2021 ', '12:40 am'),
-(8, '1476479542', '993628918', 'Ok brother, im coming...', 'November 2, 2021 ', '12:41 am');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -63,15 +49,17 @@ CREATE TABLE `user` (
   `email` text NOT NULL,
   `pass` text NOT NULL,
   `status` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `img`, `username`, `email`, `pass`, `status`) VALUES
-(1, '993628918', 'uploads/5a788ef99d.png', 'Robart', 'robart@gmail.com', '$2y$10$Un4e4OysRaXiUa9d/8x1LuuyuysChCrPnc6KVOMkGXKgj3KVVzG7O', 'Active'),
-(2, '1476479542', 'uploads/b2c20e2d9b.png', 'William', 'william@gmail.com', '$2y$10$5XM33B/CMUXrTV.niEjjnudzz/auaGkrp20IEZ2Qd4KiapG9J4re.', 'Active');
+(1, 'uploads/5a788ef99d.png', 'Robart', 'robart@gmail.com', '$2y$10$Un4e4OysRaXiUa9d/8x1LuuyuysChCrPnc6KVOMkGXKgj3KVVzG7O', 'Active'),
+(2, 'uploads/b2c20e2d9b.png', 'William', 'william@gmail.com', '$2y$10$5XM33B/CMUXrTV.niEjjnudzz/auaGkrp20IEZ2Qd4KiapG9J4re.', 'Active'),
+(3, 'uploads/103c847646.jpg', 'giang', 'giang@gmail.com', '$2y$10$SuE36vtgaha8XHSlzBZRouS6FVj/jHQG/Dma1pn1njHi8KqDcp3QW', 'Active'),
+(4, 'uploads/630cb166d7.jpg', 'nguyen hau gaing', 'giang1@gmail.com', '$2y$10$wbspaEEUwjxs0x56mG..UukjIpjYjv4Z6cVjzJQkol49jTYU4Sm7S', 'Active');
 
 --
 -- Indexes for dumped tables
@@ -97,13 +85,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `tbl_message`
 --
 ALTER TABLE `tbl_message`
-  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
